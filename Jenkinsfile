@@ -26,10 +26,10 @@ pipeline{
             }
             script{
                try{
-                  sh "ssh ec2-user@18.188.131.191 kubectl apply -f"
+                  sh "ssh ubuntu@18.188.131.191 kubectl apply -f"
                }
                catch(error){
-                 sh "ssh ec2-user@18.188.131.191 kubectl create -f"
+                 sh "ssh ubuntu@18.188.131.191 kubectl create -f"
                }
             }
          }
