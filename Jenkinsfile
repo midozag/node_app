@@ -10,10 +10,12 @@ pipeline{
        }
      }
     stage('DockerHub Push'){
+       steps{
        withCredentials([string(credentialsId: 'docker-hub-pwd', variable: 'dockerHubPwd')]) {
           sh "docker login -u zag2020 -p ${dockerHubPwd}"
           sh "docker push zag2020/nodeapp:${DOCKER_TAG}"
-           }
+       }
+       }
      }
    }
 }
