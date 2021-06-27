@@ -6,7 +6,7 @@ pipeline{
    stages{
     stage('Build Docker image'){
        steps{
-         sh "docker build -t zag2020/nodeapp:${DOCKER_TAG}"
+         sh "docker build . -t zag2020/nodeapp:${DOCKER_TAG}"
        }
      }
    }
