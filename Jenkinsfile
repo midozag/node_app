@@ -24,14 +24,7 @@ pipeline{
            sshagent(['kops']) {
               sh "scp -o StrictHostKeyChecking=no node-app-pod.yml services.yml ubuntu@18.188.131.191:/home/ubuntu/"
                }
-            script{
-               try{
-                  sh "ssh ubuntu@18.188.131.191 kubectl apply -f"
-               }
-               catch(error){
-                 sh "ssh ubuntu@18.188.131.191 kubectl create -f"
-               }
-            }
+          
          }
       }
    }
